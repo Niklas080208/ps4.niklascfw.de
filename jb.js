@@ -147,7 +147,7 @@ let allDone = false,
     const { key, off } = offsetsFor(navigator.userAgent);
     mark("FW", key || "(not a PS4 UA)");
     if (!off) {
-      state("no offsets for this firmware", "bad");
+      state("Keine Offsets für diese Firmware", "bad");
       return;
     }
     const fwKey = key || "unknown";
@@ -292,7 +292,7 @@ let allDone = false,
         "read-phase retry " + retryCount() + "/" + RETRY_MAX,
       );
 
-    state("running the primitive...", "warn");
+    state("Primitive wird ausgeführt...", "warn");
     await new Promise((r) => setTimeout(r, 0));
 
     const PRIMITIVE_LOUD = /FAIL|ERROR|THREW|RETRY|ABORT|PASS/i;
@@ -3318,7 +3318,7 @@ let allDone = false,
     );
   } catch (e) {
     mark("THREW", e && e.message ? e.message : String(e));
-    state("threw", "bad");
+    state("Fehler aufgetreten", "bad");
   } finally {
     try {
       if (jbRestoreHook) jbRestoreHook("finally");
